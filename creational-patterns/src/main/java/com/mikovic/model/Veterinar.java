@@ -1,0 +1,26 @@
+package com.mikovic.model;
+
+import com.mikovic.interfaces.Medication;
+import com.mikovic.interfaces.Subject;
+
+public class Veterinar extends Person implements Subject {
+    @Override
+    public void presentation() {
+        System.out.println("Я ветеринар ");
+    }
+
+
+    public void observer (Subject subject) {
+        presentation();
+        System.out.print("Сегодня у меня на осмотре ");
+        subject.presentation();
+    }
+
+
+    public void thereapy(Subject subject) {
+        System.out.print("Пациенту ");
+        subject.presentation();
+        System.out.println("Я делаю клизму");
+
+    }
+}

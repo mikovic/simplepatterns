@@ -1,7 +1,5 @@
 import com.mikovic.interfaces.Subject;
-import com.mikovic.model.Client;
-import com.mikovic.model.Doctor;
-import com.mikovic.model.Visit;
+import com.mikovic.model.*;
 import com.mikovic.patterns.Factory;
 import com.mikovic.patterns.PersonFactory;
 import com.mikovic.patterns.VisitBuilder;
@@ -28,6 +26,21 @@ public class Main {
         VisitBuilder builder = new VisitBuilder();
         Visit visit = builder.buildVisit(client1, doctor1);
         visit.presentation();
+
+        System.out.println("------pattern Adapter наследование-------");
+        VeterinarAdapterExtends adapter = new VeterinarAdapterExtends();
+        Dog dog = new Dog();
+        adapter.examination(dog);
+        adapter.treatment(dog);
+
+        System.out.println("------pattern Adapter композиция-------");
+        VeterinarAdapterComposition adapterComposition = new VeterinarAdapterComposition();
+        adapterComposition.examination(dog);
+        adapterComposition.treatment(dog);
+
+        System.out.println("------pattern FACADE -------");
+        Clinica clinica = new Clinica();
+        clinica.start();
 
     }
 }
