@@ -8,6 +8,19 @@ import java.util.ArrayList;
 
 public class Client extends Person  implements Subject {
     private ArrayList<Doctor> doctors;
+
+    public Client(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
+
+    public Client(String firstName ) {
+        super(firstName);
+    }
+
+    public Client() {
+        super();
+    }
+
     public ArrayList<Doctor> getDoctors() {
         return doctors;
     }

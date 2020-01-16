@@ -1,10 +1,26 @@
 package com.mikovic.model;
 import java.time.LocalDate;
 
-public class Person extends BaseEntity{
-    protected LocalDate date;
+public abstract class  Person extends BaseEntity{
+    protected LocalDate dateReg;
+    protected LocalDate birthday;
     protected String firstName;
     protected String lastName;
+
+    public Person(String firstName,String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateReg = LocalDate.now();
+    }
+    public Person(String firstName){
+        this.firstName = firstName;
+        this.dateReg = LocalDate.now();
+
+    }
+    public Person(){
+
+    }
+
     public String getFirstName() {
         return this.firstName;
     }
@@ -19,5 +35,21 @@ public class Person extends BaseEntity{
     }
     public void showPerson() {
         System.out.print("Я "+firstName + " "+lastName +".");
+    }
+
+    public LocalDate getDateReg() {
+        return dateReg;
+    }
+
+    public void setDateReg(LocalDate dateReg) {
+        this.dateReg = dateReg;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 }
