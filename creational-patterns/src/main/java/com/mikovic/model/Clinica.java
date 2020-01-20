@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Clinica extends BaseEntity {
     private ArrayList<Doctor> doctors;
     private ArrayList<Client> clients;
+    private Registratura registratura;
 
     public Clinica() {
         this.doctors = new ArrayList<>();
@@ -37,5 +38,11 @@ public class Clinica extends BaseEntity {
         clients.add(client);
     }
 
+    public Registratura getRegistratura() {
+        return registratura;
+    }
 
+    public void setRegistratura(Registratura registratura) {
+        this.registratura = registratura;
+    }
 }

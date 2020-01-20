@@ -4,6 +4,17 @@ import com.mikovic.interfaces.Medication;
 import com.mikovic.interfaces.Subject;
 
 public class Veterinar extends Person implements Subject {
+    public Veterinar(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
+
+    public Veterinar(String firstName) {
+        super(firstName);
+    }
+    public Veterinar() {
+        super();
+    }
+
     @Override
     public void presentation() {
         System.out.println("Я ветеринар ");

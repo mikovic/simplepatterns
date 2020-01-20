@@ -1,6 +1,6 @@
 package com.mikovic.model;
 
-public class BaseEntity {
+public abstract class BaseEntity {
     protected Integer id;
     public void setId(Integer id) {
         this.id = id;
