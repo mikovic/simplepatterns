@@ -5,10 +5,13 @@ import com.mikovic.patterns.Factory;
 import com.mikovic.patterns.PersonFactory;
 import com.mikovic.patterns.VisitBuilder;
 
+import java.sql.Connection;
 import java.time.LocalDate;
 
+import static java.lang.System.exit;
+
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ClassNotFoundException {
         System.out.println("------pattern Factory--------");
         Factory factory = new Factory();
         Subject client = factory.getCurrentPerson("client");
@@ -72,6 +75,8 @@ public class Main {
         registratura.register("cartClient1", registrationClient1);
         // регистрируем клиента
         registratura.execute("cartClient1");
+
+
 
 
     }

@@ -6,6 +6,7 @@ public abstract class  Person extends BaseEntity{
     protected LocalDate birthday;
     protected String firstName;
     protected String lastName;
+    protected String description;
 
     public Person(String firstName,String lastName){
         this.firstName = firstName;
@@ -34,7 +35,8 @@ public abstract class  Person extends BaseEntity{
         this.lastName = lastName;
     }
     public void showPerson() {
-        System.out.print("Я "+firstName + " "+lastName +".");
+        System.out.print("Я "+ firstName + " "+lastName +". Дата рождения: " + birthday+ "\n"+
+        description +". Мой ID: "+id +". ");
     }
 
     public LocalDate getDateReg() {
@@ -51,5 +53,13 @@ public abstract class  Person extends BaseEntity{
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
