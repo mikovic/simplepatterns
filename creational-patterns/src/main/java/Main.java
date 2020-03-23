@@ -1,14 +1,11 @@
-import com.mikovic.interfaces.Command;
-import com.mikovic.interfaces.Subject;
+import com.mikovic.entities.mistake.interfaces.Command;
+import com.mikovic.entities.mistake.interfaces.Subject;
 import com.mikovic.model.*;
 import com.mikovic.patterns.Factory;
 import com.mikovic.patterns.PersonFactory;
 import com.mikovic.patterns.VisitBuilder;
 
-import java.sql.Connection;
 import java.time.LocalDate;
-
-import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
