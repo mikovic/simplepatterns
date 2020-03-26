@@ -1,6 +1,4 @@
-package com.mikovic.interfaces;
-
-import com.mikovic.model.BaseEntity;
+package com.mikovic.entities.mistake.interfaces;
 
 public interface Medication {
     public void examination(Subject subject);

@@ -1,7 +1,7 @@
 package com.mikovic.patterns;
 
 
-import com.mikovic.interfaces.Subject;
+import com.mikovic.entities.mistake.interfaces.Subject;
 import com.mikovic.model.Client;
 import com.mikovic.model.Doctor;
 

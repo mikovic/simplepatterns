@@ -1,6 +1,6 @@
 package com.mikovic.model;
 
-import com.mikovic.interfaces.Command;
+import com.mikovic.entities.mistake.interfaces.Command;
 
 public class RegistrationCommand implements Command {
     private Registrator registrator;

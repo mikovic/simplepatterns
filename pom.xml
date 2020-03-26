@@ -13,6 +13,7 @@
 
         <module>maper</module>
         <module>demo-mvc-spring</module>
+        <module>sob1</module>
     </modules>
 
 

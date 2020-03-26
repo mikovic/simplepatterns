@@ -1,7 +1,6 @@
 package com.mikovic.model;
 
-import com.mikovic.interfaces.Medication;
-import com.mikovic.interfaces.Subject;
+import com.mikovic.entities.mistake.interfaces.Subject;
 
 public class Veterinar extends Person implements Subject {
     public Veterinar(String firstName, String lastName) {

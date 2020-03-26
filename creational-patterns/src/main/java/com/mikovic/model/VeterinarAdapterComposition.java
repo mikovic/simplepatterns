@@ -1,7 +1,7 @@
 package com.mikovic.model;
 
-import com.mikovic.interfaces.Medication;
-import com.mikovic.interfaces.Subject;
+import com.mikovic.entities.mistake.interfaces.Medication;
+import com.mikovic.entities.mistake.interfaces.Subject;
 
 public class VeterinarAdapterComposition implements Medication {
 
