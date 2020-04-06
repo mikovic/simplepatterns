@@ -1,10 +1,15 @@
 package com.mikovic.model;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "students")
-public class Student {
+public class Student implements Serializable {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,8 +17,16 @@ public class Student {
 
     @Column(name = "name")
     private String name;
-    @Column(name = "mark")
-    int mark;
+
+
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+    @JoinTable(
+            name = "students_marks",
+            joinColumns = @JoinColumn(name = "student_id" ),
+            inverseJoinColumns = @JoinColumn(name =  "mark_id" )
+    )
+    private List<Mark> marks;
 
     public int getId() {
         return id;
@@ -31,12 +44,19 @@ public class Student {
         this.name = name;
     }
 
-    public int getMark() {
-        return mark;
+    public List<Mark> getMarks() {
+        if(marks==null){
+            this.marks =new ArrayList<>();
+        }
+        return marks;
     }
 
-    public void setMark(int mark) {
-        this.mark = mark;
+    public void setMarks(List<Mark> marks) {
+        this.marks = marks;
+    }
+    public void addMark(Mark mark)
+    {
+        getMarks().add(mark);
     }
 
     @Override
@@ -44,7 +64,7 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", mark=" + mark +
+                ", marks=" + marks +
                 '}';
     }
 }

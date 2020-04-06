@@ -1,5 +1,6 @@
 package com.mikovic;
 
+import com.mikovic.model.Mark;
 import com.mikovic.model.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -16,7 +17,7 @@ public class HibernateSessionFactory {
             try {
                 Configuration configuration = new Configuration().addResource("hibernate.cfg.xml").configure();
                 configuration.addAnnotatedClass(Student.class);
-
+                configuration.addAnnotatedClass(Mark.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
 

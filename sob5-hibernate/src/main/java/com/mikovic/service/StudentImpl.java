@@ -15,15 +15,19 @@ public class StudentImpl implements StudentDao {
 
     @Override
     public List<Student> findAll() {
-        List<Student>students = (List<Student>)  HibernateSessionFactory.getSessionFactory()
-                .openSession().createQuery("from Student").list();
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        List<Student>students = (List<Student>)  session.createQuery("from Student").list();
+        session.close();
         return students;
 
     }
 
     @Override
     public Student findById(int id) {
-        return HibernateSessionFactory.getSessionFactory().openSession().get(Student.class, id);
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Student student = session.get(Student.class, id);
+        session.close();
+        return student;
     }
 
     @Override
