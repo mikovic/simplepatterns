@@ -15,6 +15,9 @@
         <module>demo-mvc-spring</module>
         <module>sob1</module>
         <module>sob2-datastructure</module>
+        <module>thread</module>
+        <module>sob3-thread</module>
+        <module>sob5-hibernate</module>
     </modules>
 
 
